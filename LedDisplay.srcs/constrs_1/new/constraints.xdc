@@ -111,8 +111,8 @@ set_property PACKAGE_PIN V14 [get_ports data[7]]
                                                                                                        
                                                                                                        
 ##Buttons                                                                                              
-#set_property PACKAGE_PIN U18 [get_ports clk]						                                                    
-	#set_property IOSTANDARD LVCMOS33 [get_ports clk]                                                     
+set_property PACKAGE_PIN U18 [get_ports send]						                                                    
+	set_property IOSTANDARD LVCMOS33 [get_ports send]                                                     
 #set_property PACKAGE_PIN T18 [get_ports reset]						                                                  
 	#set_property IOSTANDARD LVCMOS33 [get_ports reset]                                                   
 #set_property PACKAGE_PIN W19 [get_ports btnL]						                                                   
@@ -269,8 +269,8 @@ set_property PACKAGE_PIN V14 [get_ports data[7]]
 ##USB-RS232 Interface                                                                                  
 set_property PACKAGE_PIN B18 [get_ports rx]						                                                      
 	set_property IOSTANDARD LVCMOS33 [get_ports rx]                                                       
-#set_property PACKAGE_PIN A18 [get_ports data_in]						                                                
-	#set_property IOSTANDARD LVCMOS33 [get_ports data_in]                                                 
+set_property PACKAGE_PIN A18 [get_ports tx]						                                                
+	set_property IOSTANDARD LVCMOS33 [get_ports tx]                                                 
                                                                                                        
                                                                                                        
 ##USB HID (PS/2)                                                                                       
