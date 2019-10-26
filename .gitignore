@@ -84,3 +84,8 @@
 !*.elf
 !*.bmm
 !*.xmp
+/LedDisplay.cache/
+/LedDisplay.hw/
+/LedDisplay.ip_user_files/
+/LedDisplay.runs/
+/LedDisplay.sim/
