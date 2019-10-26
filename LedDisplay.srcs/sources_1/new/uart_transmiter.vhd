@@ -35,7 +35,9 @@ entity uart_transmiter is
     Port ( 
         clk     : in STD_LOGIC;
         rx      : in STD_LOGIC;
-        data    : out STD_LOGIC_VECTOR (7 downto 0)
+        data    : out STD_LOGIC_VECTOR (7 downto 0);
+        tx	: out STD_LOGIC;
+        send 	: in STD_LOGIC
         );
 end uart_transmiter;
 
@@ -49,6 +51,14 @@ component uart_rx is
         );
 end component uart_rx;
 
+component uart_tx is
+	Port (  i_clk : in STD_LOGIC;
+		i_data : in STD_LOGIC_VECTOR (7 downto 0);
+		i_send: in STD_LOGIC;
+		o_tx : out STD_LOGIC
+		);
+end component uart_tx;
+		
 
 signal clk2clk :    STD_LOGIC;
 signal rx2rx :      STD_LOGIC;
@@ -59,7 +69,10 @@ clk2clk <= clk;
 rx2rx <= rx;
 data <= data2led;
 
-m_transmitter: uart_rx
-    port map(clk2clk,rx2rx,data2led);
+m_uart_rx: uart_rx
+	port map(clk2clk,rx2rx,data2led);
+
+m_uart_tx: uart_tx
+	port map(clk2clk,data2led,send,tx);
 
 end Behavioral;
